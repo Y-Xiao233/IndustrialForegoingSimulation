@@ -23,10 +23,7 @@ import net.yxiao233.ifs.common.event.CollectCreativeModTabItems;
 import net.yxiao233.ifs.common.registry.IFSBlocks;
 import net.yxiao233.ifs.common.registry.IFSDataComponents;
 import net.yxiao233.ifs.common.registry.IFSItems;
-import net.yxiao233.ifs.datagen.BlockStateGen;
-import net.yxiao233.ifs.datagen.BlockTagGen;
-import net.yxiao233.ifs.datagen.ItemModelGen;
-import net.yxiao233.ifs.datagen.LootTableGen;
+import net.yxiao233.ifs.datagen.*;
 import org.slf4j.Logger;
 
 import java.util.concurrent.CompletableFuture;
@@ -61,6 +58,7 @@ public class IndustrialForegoingSimulation extends ModuleController {
         generator.addProvider(event.includeServer(), LootTableGen.create(packOutput,lookupProvider));
         generator.addProvider(event.includeServer(), new ItemModelGen(packOutput,MODID,existingFileHelper));
         generator.addProvider(event.includeServer(), new BlockTagGen(packOutput,lookupProvider,MODID,existingFileHelper));
+        generator.addProvider(event.includeServer(), new RecipeGen(packOutput,lookupProvider));
     }
 
     @Override
