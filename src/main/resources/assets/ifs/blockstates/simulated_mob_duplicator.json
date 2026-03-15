@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ifs:block/simulated_mob_duplicator"
+    }
+  }
+}

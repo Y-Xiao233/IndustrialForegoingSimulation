@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "subfacing=east": {
+      "model": "ifs:block/simulated_mob_crusher",
+      "y": 90
+    },
+    "subfacing=north": {
+      "model": "ifs:block/simulated_mob_crusher"
+    },
+    "subfacing=south": {
+      "model": "ifs:block/simulated_mob_crusher",
+      "y": 180
+    },
+    "subfacing=west": {
+      "model": "ifs:block/simulated_mob_crusher",
+      "y": 270
+    }
+  }
+}

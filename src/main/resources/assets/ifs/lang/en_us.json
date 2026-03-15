@@ -1,0 +1,24 @@
+{
+  "itemGroup.ifs.main": "Industrial Foregoing: Simulation",
+
+  "tooltip.titanium.facing_handler.simulated": "Simulated Card",
+  "tooltip.ifs.fortune": "Production ",
+  "tooltip.ifs.looting": "Looting ",
+
+  "block.ifs.simulated_mob_duplicator": "Simulated Mob Duplicator",
+  "block.ifs.simulated_mob_crusher": "Simulated Mob Crusher",
+  "block.ifs.simulated_ore_laser_base": "Simulated Ore Laser Base",
+  "block.ifs.simulated_fluid_laser_base": "Simulated Fluid Laser Base",
+
+  "item.ifs.fortune": "Fortune ",
+  "item.ifs.looting": "Looting ",
+  "item.ifs.simulated_card": "Simulated Card",
+  "item.ifs.advanced_simulated_card": "Advanced Simulated Card",
+  "item.ifs.advanced_mob_imprisonment_tool": "Advanced Mob Imprisonment Tool",
+
+  "data_type.ifs.mob": "Data Type: Mob",
+  "data_type.ifs.ore": "Data Type: Ore",
+  "data_type.ifs.fluid": "Data Type: Fluid",
+
+  "mob_data.ifs.efficiency": "Efficiency"
+}

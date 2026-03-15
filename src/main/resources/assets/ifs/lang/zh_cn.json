@@ -1,0 +1,24 @@
+{
+  "itemGroup.ifs.main": "工业先锋: 模拟",
+
+  "tooltip.titanium.facing_handler.simulated": "模拟卡",
+  "tooltip.ifs.fortune": "产物 ",
+  "tooltip.ifs.looting": "战利品 ",
+
+  "block.ifs.simulated_mob_duplicator": "模拟自动刷怪机",
+  "block.ifs.simulated_mob_crusher": "模拟生物粉碎机",
+  "block.ifs.simulated_ore_laser_base": "模拟矿物镭射钻",
+  "block.ifs.simulated_fluid_laser_base": "模拟流体镭射钻",
+
+  "item.ifs.fortune": "时运 ",
+  "item.ifs.looting": "抢夺 ",
+  "item.ifs.simulated_card": "模拟卡",
+  "item.ifs.advanced_simulated_card": "高级模拟卡",
+  "item.ifs.advanced_mob_imprisonment_tool": "高级生物捕捉工具",
+
+  "data_type.ifs.mob": "数据类型: 生物",
+  "data_type.ifs.ore": "数据类型: 矿物",
+  "data_type.ifs.fluid": "数据类型: 流体",
+
+  "mob_data.ifs.efficiency": "效率"
+}

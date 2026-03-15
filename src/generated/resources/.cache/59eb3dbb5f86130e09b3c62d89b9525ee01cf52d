@@ -1,0 +1,5 @@
+// 1.21.1	2026-03-15T14:30:28.9622862	Loot Tables
+263e364e81727e52a7d0763895f06d5f45c0e005 data/ifs/loot_table/blocks/simulated_fluid_laser_base.json
+88b04842bc016753918954ecb49b1a5b257822c2 data/ifs/loot_table/blocks/simulated_mob_crusher.json
+b16015efcd031ce78866aba6e2a0474870f4c6c0 data/ifs/loot_table/blocks/simulated_mob_duplicator.json
+77660849f077f2884954048a95d15f2b59473ca7 data/ifs/loot_table/blocks/simulated_ore_laser_base.json
