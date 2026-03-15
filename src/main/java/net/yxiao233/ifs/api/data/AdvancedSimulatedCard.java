@@ -2,7 +2,7 @@ package net.yxiao233.ifs.api.data;
 
 public class AdvancedSimulatedCard extends SimulatedCard implements ISimulatedCard{
     @Override
-    public int getMaxDataStorage() {
+    public int getMaxMobDataStorage() {
         return 4;
     }
 

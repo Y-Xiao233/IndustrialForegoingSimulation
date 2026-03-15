@@ -7,12 +7,16 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.yxiao233.ifs.common.registry.IFSDataComponents;
 
 public interface ISimulatedCard {
-    default int getMaxDataStorage(){
+    default int getMaxMobDataStorage(){
         return 1;
     }
 
     default int getMaxOreDataStorage(){
         return 4;
+    }
+
+    default int getMaxFluidDataStorage(){
+        return 1;
     }
 
     default boolean isDataEmpty(ItemStack stack){
@@ -46,7 +50,7 @@ public interface ISimulatedCard {
                 if(mobData != null){
                     if(mobData.contains(entity)){
                         mobData.update(card,entity,delta);
-                    }else if(simulatedCard.getMaxDataStorage() > mobData.getEntitySize()){
+                    }else if(simulatedCard.getMaxMobDataStorage() > mobData.getEntitySize()){
                         mobData.put(card,entity,1);
                     }
                 }
@@ -69,7 +73,7 @@ public interface ISimulatedCard {
                 if(oreData != null){
                     if(oreData.contains(ore)){
                         oreData.update(card,ore,delta);
-                    }else if(simulatedCard.getMaxDataStorage() > oreData.getOreSize()){
+                    }else if(simulatedCard.getMaxOreDataStorage() > oreData.getOreSize()){
                         oreData.put(level,card,ore,1);
                     }
                 }
@@ -91,7 +95,7 @@ public interface ISimulatedCard {
                 if(fluidData != null){
                     if(fluidData.contains(fluidStack)){
                         fluidData.update(card,fluidStack,delta);
-                    }else if(simulatedCard.getMaxDataStorage() > fluidData.getOreSize()){
+                    }else if(simulatedCard.getMaxFluidDataStorage() > fluidData.getFluidSize()){
                         fluidData.put(level,card,fluidStack,1);
                     }
                 }

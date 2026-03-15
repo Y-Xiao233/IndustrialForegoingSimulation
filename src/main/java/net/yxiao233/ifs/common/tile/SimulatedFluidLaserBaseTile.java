@@ -38,9 +38,9 @@ public class SimulatedFluidLaserBaseTile extends IndustrialWorkingTile<Simulated
     public SimulatedFluidLaserBaseTile(BlockPos blockPos, BlockState blockState) {
         super(IFSBlocks.SIMULATED_FLUID_LASER_BASE, SimulatedFluidLaserBaseConfig.powerPerOperation, blockPos, blockState);
 
-        this.addTank(this.output = (SidedFluidTankComponent<SimulatedFluidLaserBaseTile>)(new SidedFluidTankComponent<SimulatedFluidLaserBaseTile>("output", SimulatedFluidLaserBaseConfig.tankSize, 102, 20, 1)).setColor(DyeColor.ORANGE).setTankAction(FluidTankComponent.Action.DRAIN));;
+        this.addTank(this.output = (SidedFluidTankComponent<SimulatedFluidLaserBaseTile>)(new SidedFluidTankComponent<SimulatedFluidLaserBaseTile>("output", SimulatedFluidLaserBaseConfig.tankSize, 43, 20, 0)).setColor(DyeColor.ORANGE).setTankAction(FluidTankComponent.Action.DRAIN));;
 
-        this.addInventory(this.simulated = (SidedInventoryComponent<SimulatedFluidLaserBaseTile>) this.simulatedInventory(58,42,1).create().setComponentHarness(this));
+        this.addInventory(this.simulated = (SidedInventoryComponent<SimulatedFluidLaserBaseTile>) this.simulatedInventory(68,42,1).create().setComponentHarness(this));
     }
 
     @Override

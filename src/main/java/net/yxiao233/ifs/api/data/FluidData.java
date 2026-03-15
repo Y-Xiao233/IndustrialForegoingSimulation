@@ -87,7 +87,7 @@ public class FluidData {
         return contains;
     }
 
-    public int getOreSize(){
+    public int getFluidSize(){
         return this.tags.size();
     }
 
