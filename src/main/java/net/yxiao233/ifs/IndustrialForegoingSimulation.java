@@ -32,7 +32,7 @@ import java.util.concurrent.CompletableFuture;
 @Mod(IndustrialForegoingSimulation.MODID)
 public class IndustrialForegoingSimulation extends ModuleController {
     public static final String MODID = "ifs";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static TitaniumTab TAB = new TitaniumTab(ResourceLocation.fromNamespaceAndPath(MODID, "main"));
     public static DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_MODE_TAB;
 

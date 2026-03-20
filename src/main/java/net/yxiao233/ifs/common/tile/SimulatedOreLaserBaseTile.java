@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.yxiao233.ifs.api.block.ISimulatedMachine;
+import net.yxiao233.ifs.api.component.BigSidedInventoryComponent;
 import net.yxiao233.ifs.api.data.ISimulatedCard;
 import net.yxiao233.ifs.api.data.OreData;
 import net.yxiao233.ifs.api.data.SimulatedCard;
@@ -26,7 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SimulatedOreLaserBaseTile extends IndustrialWorkingTile<SimulatedOreLaserBaseTile> implements ISimulatedMachine<SimulatedOreLaserBaseTile> {
     @Save
-    private final SidedInventoryComponent<SimulatedOreLaserBaseTile> output;
+    private final BigSidedInventoryComponent<SimulatedOreLaserBaseTile> output;
 
     @Save
     private final SidedInventoryComponent<SimulatedOreLaserBaseTile> simulated;
@@ -36,9 +37,12 @@ public class SimulatedOreLaserBaseTile extends IndustrialWorkingTile<SimulatedOr
     public SimulatedOreLaserBaseTile(BlockPos blockPos, BlockState blockState) {
         super(IFSBlocks.SIMULATED_ORE_LASER_BASE, SimulatedOreLaserBaseConfig.powerPerOperation, blockPos, blockState);
 
-        this.addInventory(this.output = (SidedInventoryComponent<SimulatedOreLaserBaseTile>)(new SidedInventoryComponent<SimulatedOreLaserBaseTile>("output", 45, 22, 21, 0)).setColor(DyeColor.ORANGE).setRange(7, 3).setInputFilter((stack, integer) -> {
-            return false;
-        }));
+        this.addInventory(this.output = (BigSidedInventoryComponent<SimulatedOreLaserBaseTile>)(new BigSidedInventoryComponent<SimulatedOreLaserBaseTile>("output", 45, 22, 21, 0))
+                .setColor(DyeColor.ORANGE)
+                .setRange(7, 3)
+                .setInputFilter((stack, integer) -> false)
+                .setSlotLimit(SimulatedOreLaserBaseConfig.maxOutputSlotLimit)
+        );
 
         this.addInventory(this.simulated = (SidedInventoryComponent<SimulatedOreLaserBaseTile>) this.simulatedInventory(88,80,1).create().setComponentHarness(this));
     }

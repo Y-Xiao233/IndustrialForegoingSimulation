@@ -12,4 +12,6 @@ public class SimulatedOreLaserBaseConfig {
     public static int powerPerOperation = 40;
     @ConfigVal(comment = "Max Stored Power [FE] - Default: [10000 FE]")
     public static int maxStoredPower = 10000;
+    @ConfigVal(comment = "Max Output Slot Limit - Default: [4096]")
+    public static int maxOutputSlotLimit = 4096;
 }

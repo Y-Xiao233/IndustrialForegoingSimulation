@@ -50,6 +50,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.yxiao233.ifs.api.block.ISimulatedMachine;
+import net.yxiao233.ifs.api.component.BigSidedInventoryComponent;
 import net.yxiao233.ifs.api.data.MobData;
 import net.yxiao233.ifs.api.data.SimulatedCard;
 import net.yxiao233.ifs.api.item.AddonType;
@@ -73,7 +74,7 @@ public class SimulatedMobCrusherTile extends IndustrialWorkingTile<SimulatedMobC
     private final int powerPerOperation;
     private final Method DROP_CUSTOM_DEATH_LOOT = ObfuscationReflectionHelper.findMethod(Mob.class, "dropCustomDeathLoot", new Class[]{ServerLevel.class, DamageSource.class, Boolean.TYPE});;
     @Save
-    private SidedInventoryComponent<SimulatedMobCrusherTile> output;
+    private BigSidedInventoryComponent<SimulatedMobCrusherTile> output;
     @Save
     private SidedFluidTankComponent<SimulatedMobCrusherTile> tank;
     @Save
@@ -94,8 +95,9 @@ public class SimulatedMobCrusherTile extends IndustrialWorkingTile<SimulatedMobC
                 .setComponentHarness(this)
                 .setValidator((fluidStack) -> fluidStack.getFluid().is(IndustrialTags.Fluids.EXPERIENCE))
         );
-        this.addInventory(this.output = (SidedInventoryComponent<SimulatedMobCrusherTile>)(new SidedInventoryComponent<SimulatedMobCrusherTile>("output", 64, 22, 18, 1)).setColor(DyeColor.ORANGE).setRange(6, 3)
+        this.addInventory(this.output = (BigSidedInventoryComponent<SimulatedMobCrusherTile>)(new BigSidedInventoryComponent<SimulatedMobCrusherTile>("output", 64, 22, 18, 1)).setColor(DyeColor.ORANGE).setRange(6, 3)
                 .setInputFilter((stack, integer) -> false)
+                .setSlotLimit(SimulatedMobCrusherConfig.maxOutputSlotLimit)
                 .setComponentHarness(this)
         );
         this.addButton(new ButtonComponent(154 - 18, 84, 14, 14) {
