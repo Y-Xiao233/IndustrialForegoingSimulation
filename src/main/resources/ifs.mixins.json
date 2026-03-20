@@ -3,9 +3,11 @@
   "minVersion": "0.8",
   "package": "net.yxiao233.ifs.mixin",
   "compatibilityLevel": "JAVA_21",
+  "plugin": "net.yxiao233.ifs.mixin.IFSMixinPlugin",
   "mixins": [
     "tile.MixinFluidLaserBaseTile",
-    "tile.MixinOreLaserBaseTile"
+    "tile.MixinOreLaserBaseTile",
+    "tile.MixinSoulLaserBaseBlockEntity"
   ],
   "client": [
   ],

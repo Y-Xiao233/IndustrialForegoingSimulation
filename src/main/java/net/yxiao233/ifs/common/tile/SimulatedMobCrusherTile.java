@@ -116,7 +116,7 @@ public class SimulatedMobCrusherTile extends IndustrialWorkingTile<SimulatedMobC
             markForUpdate();
         }));
 
-        this.addInventory(this.simulated = (SidedInventoryComponent<SimulatedMobCrusherTile>) simulatedInventory(88,80,1).create()
+        this.addInventory(this.simulated = (SidedInventoryComponent<SimulatedMobCrusherTile>) simulatedInventory(88,80,2).create()
                 .setComponentHarness(this)
         );
         this.maxProgress = SimulatedMobCrusherConfig.maxProgress;

@@ -72,22 +72,22 @@ repositories {
         url = "https://maven.blamejared.com/"
     }
 
-//    maven {
-//        //Ars Nouveau
-//        url 'https://maven.blamejared.com'
-//    }
+    maven {
+        //Ars Nouveau
+        url 'https://maven.blamejared.com'
+    }
 
     maven {
         //JEI
         url 'https://modmaven.dev/'
     }
 
-//    maven {
-//        url "https://www.cursemaven.com"
-//        content {
-//            includeGroup "curse.maven"
-//        }
-//    }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 
     maven {
         name = "Modrinth"
@@ -98,15 +98,15 @@ repositories {
         }
     }
 
-//    maven {
-//        name = 'GeckoLib'
-//        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-//        content {
-//            includeGroup("software.bernie.geckolib")
-//        }
-//    }
-//
-//    maven { url = 'https://maven.minecraftforge.net/' }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+
+    maven { url = 'https://maven.minecraftforge.net/' }
 }
 
 
@@ -119,17 +119,20 @@ dependencies {
     implementation("maven.modrinth:industrial-foregoing:${industrialforegoing_version}")
     implementation("maven.modrinth:titanium:${titanium_version}")
 
-//    // Ars Nouveau
-//    implementation "com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_nouveau_version}"
-//    //TerraBlender
-//    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terra_blender_version}"
-//    //Geckolib
-//    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
-//    //Curios API
-//    implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-//    //Patchouli
-//    implementation "vazkii.patchouli:Patchouli:${patchouli_version}"
-//
+    //Industrial Foregoing Souls
+    implementation "curse.maven:industrial-foregoing-souls-904394:${industrialforegoing_souls_version}"
+
+    // Ars Nouveau
+    implementation "com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_nouveau_version}"
+    //TerraBlender
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terra_blender_version}"
+    //Geckolib
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+    //Curios API
+    implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    //Patchouli
+    implementation "vazkii.patchouli:Patchouli:${patchouli_version}"
+
 //    //Component Viewer
 //    implementation("maven.modrinth:component-viewer:${component_viewer_version}")
 }

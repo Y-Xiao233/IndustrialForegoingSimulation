@@ -21,10 +21,12 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.yxiao233.ifs.api.block.ISimulatedMachine;
 import net.yxiao233.ifs.api.data.ISimulatedCard;
+import net.yxiao233.ifs.common.compact.ars_nouveau.ArsNouveauCompact;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -69,9 +71,23 @@ public abstract class MixinFluidLaserBaseTile  extends IndustrialMachineTile<Flu
                 return LaserDrillRarity.getValidRarity(this.level, laserDrillFluidRecipe.rarity, this.level.dimensionType(), this.level.getBiome(this.worldPosition), this.miningDepth) != null;
             }).findFirst().ifPresent((recipe) -> {
                 if (recipe.entityData.isPresent()) {
+                    if(ModList.get().isLoaded("ars_nouveau")){
+                        LivingEntity entityInMobJar = ArsNouveauCompact.getMobJarEntity(this.level,this.worldPosition);
+                        if(entityInMobJar != null){
+                            CompoundTag data = new CompoundTag();
+                            entityInMobJar.saveWithoutId(data);
+                            if(recipe.entityData.get().getEntity().test(entityInMobJar) && NbtUtils.compareNbt(recipe.entityData.get().getData(), data, true)){
+                                this.output.fillForced(recipe.output.getFluids()[0].copy(), IFluidHandler.FluidAction.EXECUTE);
+                                return;
+                            }
+                        }
+                    }
+
                     List<LivingEntity> entities = this.level.getEntitiesOfClass(LivingEntity.class, box.bounds(), (entity) -> {
                         return recipe.entityData.get().getEntity().test(entity);
                     });
+
+
                     if (entities.isEmpty()) {
                         return;
                     }
@@ -107,7 +123,6 @@ public abstract class MixinFluidLaserBaseTile  extends IndustrialMachineTile<Flu
                         }
                     }
                 }
-
             });
         }
     }
